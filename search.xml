@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[hexo的使用]]></title>
     <url>%2F2019%2F03%2F20%2Fhexo%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[Hexo的搭建 张某的博客 Hexo常用命令123456789hexo n &quot;文章名称&quot; #新建文章，被放在\source\_posts目录下hexo n page &quot;页面名称&quot; #新建页面hexo g #生成静态页面至public目录hexo s #开启预览访问 http://localhost:4000 如果访问失败，可能是端口被占用hexo d #部署到GitHubhexo clean #清除缓存文件 (db.json) 和已生成的静态文件 (public)hexo s -g #生成并本地预览hexo d -g #生成并上传]]></content>
+    <content type="text"><![CDATA[Hexo的搭建 张某的博客 Hexo常用命令123456789hexo n "文章名称" #新建文章，被放在\source\_posts目录下hexo n page "页面名称" #新建页面hexo g #生成静态页面至public目录hexo s #开启预览访问 http://localhost:4000 如果访问失败，可能是端口被占用hexo d #部署到GitHubhexo clean #清除缓存文件 (db.json) 和已生成的静态文件 (public)hexo s -g #生成并本地预览hexo d -g #生成并上传]]></content>
       <categories>
         <category>笔记</category>
       </categories>
