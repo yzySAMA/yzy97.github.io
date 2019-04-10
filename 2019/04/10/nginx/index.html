@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="高并发,">
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="蓦然回首，那人却在灯火阑珊处">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://blog.yzy97.cn/categories/index.html">
+<meta name="description" content="Nginx">
+<meta name="keywords" content="高并发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://blog.yzy97.cn/2019/04/10/nginx/index.html">
 <meta property="og:site_name" content="Zoe的个人博客">
-<meta property="og:description" content="蓦然回首，那人却在灯火阑珊处">
+<meta property="og:description" content="Nginx">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-20T04:03:18.818Z">
+<meta property="og:image" content="http://blog.yzy97.cn/2019/04/10/nginx/1.jpg">
+<meta property="og:updated_time" content="2019-04-10T07:50:22.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="蓦然回首，那人却在灯火阑珊处">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="Nginx">
+<meta name="twitter:image" content="http://blog.yzy97.cn/2019/04/10/nginx/1.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.yzy97.cn/categories/">
+  <link rel="canonical" href="http://blog.yzy97.cn/2019/04/10/nginx/">
 
 
 
 
 
-  <title>categories | Zoe的个人博客</title>
+  <title>Nginx | Zoe的个人博客</title>
   
 
 
@@ -292,40 +295,217 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yzy97.cn/2019/04/10/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zoe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/my1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zoe的个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/拓展/">拓展</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Nginx</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-10T10:21:00+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p><img src="/2019/04/10/nginx/1.jpg" alt></p>
+<a id="more"></a>
+<h2 id="1、Nginx介绍"><a href="#1、Nginx介绍" class="headerlink" title="1、Nginx介绍"></a>1、Nginx介绍</h2><p>&#160; &#160; &#160; &#160;Nginx (engine x) 是一个<strong><em>高性能的HTTP和反向代理服务</em></strong>，也是一个IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点开发的，第一个公开版本0.1.0发布于2004年10月4日。<br>其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。2011年6月1日，nginx 1.0.4发布。<br>&#160; &#160; &#160; &#160;Nginx是一款<strong><em>轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器</em></strong>，并在一个BSD-like 协议下发行。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。<br><strong><em>轻量级</em></strong>: 1.c语言开发的. 每次启动时会开启2个进程项.每个进程占用空间不到2M.<br><strong><em>并发能力强</em></strong>:官方数据理论值5万/秒, 实测:3万/秒<br><strong><em>核心特点</em></strong>:就是请求的转发.nginx是开源免费的.<br><strong><em>硬件负载均衡器</em></strong>:F5</p>
+<hr>
+<h2 id="2、Nginx官网"><a href="#2、Nginx官网" class="headerlink" title="2、Nginx官网"></a>2、Nginx官网</h2><ol>
+<li>网址: <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></li>
+</ol>
+<hr>
+<h2 id="3、Nginx的使用"><a href="#3、Nginx的使用" class="headerlink" title="3、Nginx的使用"></a>3、Nginx的使用</h2><blockquote>
+<p>每次启动Nginx会启动2个进程项.一个是主进程.一个是守护进程.<br>主进程:主要实现反向代理/负载均衡<br>守护进程:防止主进程意外关闭.<br>手动关闭：先关闭守护进程(内存小的),之后关闭主进程(内存大的).</p>
+</blockquote>
+<h3 id="3-1、Nginx命令"><a href="#3-1、Nginx命令" class="headerlink" title="3.1、Nginx命令"></a>3.1、Nginx命令</h3><blockquote>
+<p>如果执行nginx命令,则必须在nginx.exe所在的根目录中执行</p>
+<ol>
+<li>启动: <code>start nginx</code></li>
+<li>重启: <code>nginx –s reload</code>   必须先启动再重启</li>
+<li>关闭: <code>nginx –s stop</code></li>
+</ol>
+</blockquote>
+<h3 id="3-2、Nginx配置文件"><a href="#3-2、Nginx配置文件" class="headerlink" title="3.2、Nginx配置文件"></a>3.2、Nginx配置文件</h3><p><strong><em>通过server表示一个反向代理的配置(默认配置)</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    	#表示监听的端口号  一般都是80</span><br><span class="line">        listen       80;</span><br><span class="line">        #表示需要拦截的域名</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">	#真实的反向代理</span><br><span class="line">        location / &#123;</span><br><span class="line">	    #root是关键字  表示反向代理的是一个文件夹</span><br><span class="line">            root   html;</span><br><span class="line">            #默认访问页面 </span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>配置图片服务器</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name image.yzy.com;</span><br><span class="line"></span><br><span class="line">		location / &#123;</span><br><span class="line">			root F:/upload;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>本地测试可以修改HOSTS文件<br>  <code>127.0.0.1 image.yzy.com</code></p>
+</blockquote>
+<p><strong><em>配置后台服务器,实现域名的代理</em></strong><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">	listen 80;</span><br><span class="line">	server_name manage.yzy.com;</span><br><span class="line"></span><br><span class="line">	location / &#123;</span><br><span class="line">	</span><br><span class="line">		proxy_pass http://localhost:8091;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> <strong><em>搭建tomcat集群,实现负载均衡</em></strong></p>
+<blockquote>
+<p>生成N个基于spring boot的war包<br> 启动tomcat服务器:  <code>java -jar tomcat-8091.war</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#配置windows tomcat集群</span><br><span class="line">	upstream zoe &#123;</span><br><span class="line">		server 127.0.0.1:8091;</span><br><span class="line">		server 127.0.0.1:8092;</span><br><span class="line">		server 127.0.0.1:8093;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	#配置后台服务器   实现域名的代理</span><br><span class="line">	server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name manage.zoe.com;</span><br><span class="line"></span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://zoe;</span><br><span class="line">			#proxy_pass http://localhost:8091;</span><br><span class="line">			#实现tomcat集群配置 名称必须一致</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、Nginx高级"><a href="#4、Nginx高级" class="headerlink" title="4、Nginx高级"></a>4、Nginx高级</h2><h3 id="4-1、负载均衡"><a href="#4-1、负载均衡" class="headerlink" title="4.1、负载均衡"></a>4.1、负载均衡</h3><h4 id="4-1-1、轮询策略"><a href="#4-1-1、轮询策略" class="headerlink" title="4.1.1、轮询策略"></a>4.1.1、轮询策略</h4><blockquote>
+<p>根据配置文件的顺序,依次访问服务器</p>
+</blockquote>
+<h4 id="4-1-2、权重策略"><a href="#4-1-2、权重策略" class="headerlink" title="4.1.2、权重策略"></a>4.1.2、权重策略</h4><blockquote>
+<p>权重:给性能更好的服务器多分配请求.权重值越大,分担的请求数量越多.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#配置windows tomcat集群  策略1:轮询 策略2:权重</span><br><span class="line">	upstream zoe &#123;</span><br><span class="line">		server 127.0.0.1:8091 weight=6;</span><br><span class="line">		server 127.0.0.1:8092 weight=3;</span><br><span class="line">		server 127.0.0.1:8093 weight=1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-1-3、IPHASH-了解"><a href="#4-1-3、IPHASH-了解" class="headerlink" title="4.1.3、IPHASH(了解)"></a>4.1.3、IPHASH(了解)</h4><p><strong>问题:</strong><br>&#160; &#160; &#160; &#160;由于tomcat服务器中的session不能共享.所以将用户信息保存到了session的做法可能会导致用户频繁登录的现象.<br><strong>如何解决:</strong><br>&#160; &#160; &#160; &#160;让用户绑定固定的服务器.用户每次访问都访问同一台tomcat服务器.<br><strong>如何实现:</strong><br>&#160; &#160; &#160; &#160;利用IP地址进行hash运算,之后将IP地址绑定指定的服务器.<br><strong>引出新问题:</strong></p>
+<ol>
+<li>负载不均.</li>
+<li>IP地址可能会发生变化.导致数据无法共享</li>
+<li>如果服务器宕机,则链接该服务器的用户都发受到影响.</li>
+</ol>
+<p><strong>技术升级: <code>实现SSO</code></strong><br>&#160; &#160; &#160; &#160;SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，用户只需要登录一次就可以访问所有相互信任的应用系统。它包括可以将这次主要的登录映射到其他应用中用于同一个用户的登录的机制。它是目前比较流行的企业业务整合的解决方案之一。</p>
+<h3 id="4-2、Nginx高可用"><a href="#4-2、Nginx高可用" class="headerlink" title="4.2、Nginx高可用"></a>4.2、Nginx高可用</h3><h4 id="4-2-1、down属性"><a href="#4-2-1、down属性" class="headerlink" title="4.2.1、down属性"></a>4.2.1、down属性</h4><blockquote>
+<p>如果后台服务器因为人为的因素可以设置为down,down之后nginx将不会把请求发往该机器.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">upstream zoe&#123;</span><br><span class="line">	...</span><br><span class="line">	server 127.0.0.1:8091 dowm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-2-2、backup策略"><a href="#4-2-2、backup策略" class="headerlink" title="4.2.2、backup策略"></a>4.2.2、backup策略</h4><blockquote>
+<p>backup表示备用机,当主服务器不能及时响应时,或者主服务器宕机时,这时备用才会生效.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">upstream zoe&#123;</span><br><span class="line">	...</span><br><span class="line">	server 127.0.0.1:8091 backup;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-2-3、Nginx健康检测"><a href="#4-2-3、Nginx健康检测" class="headerlink" title="4.2.3、Nginx健康检测"></a>4.2.3、Nginx健康检测</h4><p><strong>Nginx高版本特性:</strong></p>
+<p>&#160; &#160; &#160; &#160;当服务器不能响应时,nginx会自动的访问下一台服务器.直到访问成功为止.并且在短时间内不会再次访问故障机.<br>&#160; &#160; &#160; &#160;如果在低版本中用户访问故障机时,会一直等到服务超时才会访问下一台.<br>原理说明:<br>&#160; &#160; &#160; &#160;当nginx访问故障机时,记录该机器的信息,之后在指定的周期内不会再次访问该故障机.直到下一个周期请求故障机.<br>配置信息:<br>    <code>max_fails=1</code> 最大失败次数1次后开始实现健康检测的机制<br>    <code>fail_timeout=60s</code>; 在60秒之内不会再次访问故障机.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#配置windows tomcat集群  策略1:轮询 策略2:权重 策略3:iphash 优先级最高</span><br><span class="line">	upstream zoe &#123;</span><br><span class="line">		#ip_hash;</span><br><span class="line">		server 127.0.0.1:8091 max_fails=1 fail_timeout=60s;</span><br><span class="line">		server 127.0.0.1:8092 max_fails=1 fail_timeout=60s;</span><br><span class="line">		server 127.0.0.1:8093 max_fails=1 fail_timeout=60s;</span><br><span class="line">	&#125;</span><br><span class="line">	#配置后台服务器   实现域名的代理</span><br><span class="line">	server &#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name manage.zoe.com;</span><br><span class="line"></span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://zoe;</span><br><span class="line">			#proxy_pass http://localhost:8091;</span><br><span class="line">			#实现tomcat集群配置 名称必须一致</span><br><span class="line">			proxy_connect_timeout       2;  </span><br><span class="line">			proxy_read_timeout          2;  </span><br><span class="line">			proxy_send_timeout          2; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/高并发/" rel="tag"># 高并发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/28/SSM框架小记/" rel="next" title="SSM框架小记">
+                <i class="fa fa-chevron-left"></i> SSM框架小记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -358,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -454,6 +643,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx"><span class="nav-number">1.</span> <span class="nav-text">Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Nginx介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1、Nginx介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Nginx官网"><span class="nav-number">1.2.</span> <span class="nav-text">2、Nginx官网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Nginx的使用"><span class="nav-number">1.3.</span> <span class="nav-text">3、Nginx的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、Nginx命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1、Nginx命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、Nginx配置文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2、Nginx配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Nginx高级"><span class="nav-number">1.4.</span> <span class="nav-text">4、Nginx高级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1、负载均衡"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1、负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1、轮询策略"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">4.1.1、轮询策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2、权重策略"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">4.1.2、权重策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-3、IPHASH-了解"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">4.1.3、IPHASH(了解)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2、Nginx高可用"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2、Nginx高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1、down属性"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">4.2.1、down属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2、backup策略"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">4.2.2、backup策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3、Nginx健康检测"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">4.2.3、Nginx健康检测</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
