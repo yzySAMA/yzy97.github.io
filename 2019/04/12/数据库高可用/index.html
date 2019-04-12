@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,ssm,">
+  <meta name="keywords" content="高可用,">
 
 
 
@@ -79,20 +79,19 @@
 
 
 
-<meta name="description" content="SSM框架小记  持续更新中……">
-<meta name="keywords" content="java,ssm">
+<meta name="keywords" content="高可用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSM框架小记">
-<meta property="og:url" content="http://blog.yzy97.cn/2019/03/28/SSM框架小记/index.html">
+<meta property="og:title" content="数据库高可用">
+<meta property="og:url" content="http://blog.yzy97.cn/2019/04/12/数据库高可用/index.html">
 <meta property="og:site_name" content="Zoe的个人博客">
-<meta property="og:description" content="SSM框架小记  持续更新中……">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.yzy97.cn/2019/03/28/SSM框架小记/妹子11.jpg">
-<meta property="og:updated_time" content="2019-04-12T01:19:12.135Z">
+<meta property="og:image" content="http://blog.yzy97.cn/2019/04/12/数据库高可用/1.jpg">
+<meta property="og:image" content="http://blog.yzy97.cn/2019/04/12/数据库高可用/热备份.png">
+<meta property="og:image" content="http://blog.yzy97.cn/2019/04/12/数据库高可用/开启二进制文件.png">
+<meta property="og:updated_time" content="2019-04-12T11:15:36.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSM框架小记">
-<meta name="twitter:description" content="SSM框架小记  持续更新中……">
-<meta name="twitter:image" content="http://blog.yzy97.cn/2019/03/28/SSM框架小记/妹子11.jpg">
+<meta name="twitter:title" content="数据库高可用">
+<meta name="twitter:image" content="http://blog.yzy97.cn/2019/04/12/数据库高可用/1.jpg">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.yzy97.cn/2019/03/28/SSM框架小记/">
+  <link rel="canonical" href="http://blog.yzy97.cn/2019/04/12/数据库高可用/">
 
 
 
 
 
-  <title>SSM框架小记 | Zoe的个人博客</title>
+  <title>数据库高可用 | Zoe的个人博客</title>
   
 
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yzy97.cn/2019/03/28/SSM框架小记/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yzy97.cn/2019/04/12/数据库高可用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zoe">
@@ -324,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSM框架小记</h1>
+          <h1 class="post-title" itemprop="name headline">数据库高可用</h1>
         
 
         <div class="post-meta">
@@ -336,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T17:12:03+08:00">
-                2019-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-12T09:16:18+08:00">
+                2019-04-12
               </time>
             
 
@@ -396,49 +395,82 @@
       
 
       
-        <h1 id="SSM框架小记"><a href="#SSM框架小记" class="headerlink" title="SSM框架小记"></a>SSM框架小记</h1><p><img src="/2019/03/28/SSM框架小记/妹子11.jpg" alt></p>
-<blockquote>
-<p>持续更新中……</p>
-</blockquote>
+        <p><img src="/2019/04/12/数据库高可用/1.jpg" alt></p>
 <a id="more"></a>
-<h2 id="mybatis核心配置文件的驼峰命名规则"><a href="#mybatis核心配置文件的驼峰命名规则" class="headerlink" title="mybatis核心配置文件的驼峰命名规则"></a>mybatis核心配置文件的驼峰命名规则</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 是否开启自动驼峰命名规则（camel case）映射，</span></span><br><span class="line"><span class="comment">	即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置全局异常类"><a href="#配置全局异常类" class="headerlink" title="配置全局异常类"></a>配置全局异常类</h2><p>为了更好的用户体验，不会在页面上显示500，404等错误，便需要配置全局异常类<br>（最好定义好JsonResult[通常有<code>state</code>,<code>msg</code>,<code>data</code>三个属性,有传异常形参的构造方法],以便统一返回值）<br>ps:别忘了需要包扫描到此类！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"><span class="doctag">@ControllerAdvice</span> 修饰的类一般为springmvc中的全局异常处理类，</span></span><br><span class="line"><span class="comment">此类中可以定义一些异常处理方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//@RestControllerAdvice ==@ControllerAdvice+@ResponseBody</span></span><br><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalExceptionHandler</span></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	<span class="doctag">@ExceptionHandler</span>异常处理方法</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="meta">@ExceptionHandler</span>(ServiceException.class)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function">pulbic JsonResult <span class="title">doHandleServiceException</span><span class="params">(ServiceException e)</span></span>&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> JsonResult(e);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ExceptionHandler</span>(RuntimeException.class)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> JsonResult <span class="title">doHandleRuntimeException</span><span class="params">(RuntimeException e)</span></span>&#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">		JsonResult r=<span class="keyword">new</span> JsonResult();</span><br><span class="line">		r.setMessage(<span class="string">"底层出现了运行时错误，请稍后"</span>);</span><br><span class="line">		r.setState(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="restful风格"><a href="#restful风格" class="headerlink" title="restful风格"></a>restful风格</h2><ul>
-<li><p>Restful就是一个资源定位及资源操作的风格。不是标准也不是协议，只是一种风格。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。</p>
+<blockquote>
+<p>关闭tmcat服务器<br> ps -ef | grep java -&gt;&gt; kill -9(强制)/15（友好）pid</p>
+</blockquote>
+<h1 id="1、数据库备份策略"><a href="#1、数据库备份策略" class="headerlink" title="1、数据库备份策略"></a>1、数据库备份策略</h1><h2 id="1-1、数据库冷备份"><a href="#1-1、数据库冷备份" class="headerlink" title="1.1、数据库冷备份"></a>1.1、数据库冷备份</h2><p><strong>概念：</strong><br>&#160; &#160; &#160; &#160;在固定的周期内，人为的将数据库中的数据进行备份，一般一式三份<br><strong>缺点：</strong></p>
+<ol>
+<li>可能会造成数据丢失</li>
+<li>如果数据量太多，则可能会导致备份时间很长。</li>
+</ol>
+<blockquote>
+<p>ps: 虽然冷备份缺点很多，但是冷备份是恢复数据的最后手段，最好使用</p>
+</blockquote>
+<h2 id="1-2、数据库热备份"><a href="#1-2、数据库热备份" class="headerlink" title="1.2、数据库热备份"></a>1.2、数据库热备份</h2><p><img src="/2019/04/12/数据库高可用/热备份.png" alt><br><strong>步骤：</strong></p>
+<ol>
+<li>当主库的数据发生变化时，会将更新的数据写入二进制日志文件中</li>
+<li>从库中的IO线程会实时的监听主库的二进制日志文件，如果文件发生了变化，就会获取主库二进制文件中更新的记录，之后写入到从库的中继日志当中。</li>
+<li>当中继日志中有数据时，从库会通过sql线程读取中继日志中的信息，之后会将数据进行同步</li>
+<li>当上述操作完成后，主从同步完成，等待下一次同步</li>
+</ol>
+<blockquote>
+<p>数据库进行主从备份时，一台主机可以配置n台从机，一般n为2—3.</p>
+</blockquote>
+<h2 id="1-3、数据库安装与配置"><a href="#1-3、数据库安装与配置" class="headerlink" title="1.3、数据库安装与配置"></a>1.3、数据库安装与配置</h2><p>安装命令：<code>rpm -ivh ......rpm</code><br>启动/停止/重启：<code>service mysql start/stop/restart</code><br>设定用户名和密码：<code>mysqladmin -u root password root</code></p>
+<h3 id="1-3-1-远程连接数据库"><a href="#1-3-1-远程连接数据库" class="headerlink" title="1.3.1 远程连接数据库"></a>1.3.1 远程连接数据库</h3><ol>
+<li>(临时)关闭防火墙 <code>service iptables stop</code></li>
+<li>开启mysql对外访问权限 格式：GRANT ALL PRIVILEGES ON <em>.</em> TO ‘登录名‘@’登录ip,%为任意地址’ IDENTIFIED BY ‘登录密码’ <code>grant all on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;root&#39;;</code></li>
+</ol>
+<blockquote>
+<p>ps: windows访问虚拟服务器 关闭Linux防火墙和开发MySQL对外访问权限，反之亦然。</p>
+</blockquote>
+<h2 id="1-4、实现数据库主从搭建"><a href="#1-4、实现数据库主从搭建" class="headerlink" title="1.4、实现数据库主从搭建"></a>1.4、实现数据库主从搭建</h2><h3 id="1-4-1、修改主库二进制文件"><a href="#1-4-1、修改主库二进制文件" class="headerlink" title="1.4.1、修改主库二进制文件"></a>1.4.1、修改主库二进制文件</h3><ol>
+<li>修改配置文件：<code>vim /etc/my.cnf</code><br><img src="/2019/04/12/数据库高可用/开启二进制文件.png" alt></li>
+<li>重启MySQL数据库</li>
+<li>检查二进制日志文件是否正确<br>—&gt;/var/lib/mysql/ —&gt;mysql-bin.000001</li>
+</ol>
+<blockquote>
+<p>auto.cnf中server-uuid是数据库的唯一标识,默认情况下，如果主、从库的server-uuid或者server-id的值一样，将会导致主从复制报错中断。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mysql]# cd /var/lib/mysql/</span><br><span class="line">[root@localhost mysql]# ls</span><br><span class="line">abcd         jtdb                       mysql.sock</span><br><span class="line">auto.cnf     localhost.localdomain.pid  performance_schema</span><br><span class="line">ibdata1      mysql                      RPM_UPGRADE_HISTORY</span><br><span class="line">ib_logfile0  mysql-bin.000001           RPM_UPGRADE_MARKER-LAST</span><br><span class="line">ib_logfile1  mysql-bin.index            test</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>添加从库二进制文件(server-id要不一致)</li>
+</ol>
+<h3 id="1-4-2、实现数据库主从挂载"><a href="#1-4-2、实现数据库主从挂载" class="headerlink" title="1.4.2、实现数据库主从挂载"></a>1.4.2、实现数据库主从挂载</h3><ol>
+<li>检查主库的状态 <code>SHOW MASTER STATUS</code></li>
+<li>实现主从配置<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*挂载指令:</span></span><br><span class="line"><span class="comment">change master to 主机IP 主机端口号 用户名 密码</span></span><br><span class="line"><span class="comment">二进制日志文件名称 文件位置	</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">MASTER</span> <span class="keyword">TO</span> MASTER_HOST=<span class="string">"192.168.30.134"</span>,</span><br><span class="line">MASTER_PORT=<span class="number">3306</span>,</span><br><span class="line">MASTER_USER=<span class="string">"root"</span>,</span><br><span class="line">MASTER_PASSWORD=<span class="string">"root"</span>,</span><br><span class="line">MASTER_LOG_FILE=<span class="string">"mysql-bin.000001"</span>,</span><br><span class="line">MASTER_LOG_POS=<span class="number">120</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#开启主从服务</span></span><br><span class="line"><span class="keyword">START</span> <span class="keyword">SLAVE</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#检查主从状态</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">SLAVE</span> <span class="keyword">STATUS</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果主从同步搭建完成,测试</span></span><br><span class="line"><span class="comment">#如果程序报错 没有2个yes 则根据日志修改 </span></span><br><span class="line"><span class="keyword">STOP</span> <span class="keyword">SLAVE</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>资源：互联网所有的事物都可以被抽象为资源</p>
-</li>
-<li><p>资源操作：使用POST、DELETE、PUT、GET，使用不同方法对资源进行操作。分别对应 添加、 删除、修改、查询。</p>
-</li>
-<li><p>使用RESTful操作资源<br><a href="http://127.0.0.1/item/1" target="_blank" rel="noopener">http://127.0.0.1/item/1</a>        查询,GET<br><a href="http://127.0.0.1/item" target="_blank" rel="noopener">http://127.0.0.1/item</a>        新增,POST<br><a href="http://127.0.0.1/item" target="_blank" rel="noopener">http://127.0.0.1/item</a>        更新,PUT<br><a href="http://127.0.0.1/item/1" target="_blank" rel="noopener">http://127.0.0.1/item/1</a>        删除,DELETE</p>
-</li>
-<li>从URL上获取参数<br>1.使用注解<code>@RequestMapping(&quot;item/{id}&quot;)</code>声明请求的url<br>2.使用<code>(@PathVariable() Integer id)</code>获取url上的数据    </li>
-</ul>
-<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><p><em>拦截器类似于Servlect中的Fileter，用于对处理器进行预处理和后处理</em><br>实现<code>HandlerInterceptor</code>接口<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HandlerInterceptor1</span> <span class="keyword">implements</span> <span class="title">HandlerInterceptor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// controller执行后且视图返回后调用此方法</span></span><br><span class="line">	<span class="comment">// 这里可得到执行controller时的异常信息</span></span><br><span class="line">	<span class="comment">// 这里可记录操作日志</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterCompletion</span><span class="params">(...)</span></span>&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// controller执行后但未返回视图前调用此方法</span></span><br><span class="line">	<span class="comment">// 这里可在返回用户前对模型数据进行加工处理，比如这里加入公用信息以便页面显示</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postHandle</span><span class="params">(...)</span></span>&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Controller执行前调用此方法</span></span><br><span class="line">	<span class="comment">// 返回true表示继续执行，返回false中止执行</span></span><br><span class="line">	<span class="comment">// 这里可以加入登录校验、权限拦截等</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(...)</span></span>&#123;</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</ol>
+<h1 id="2、Amoeba"><a href="#2、Amoeba" class="headerlink" title="2、Amoeba"></a>2、Amoeba</h1><h2 id="2-1、Amoeba介绍"><a href="#2-1、Amoeba介绍" class="headerlink" title="2.1、Amoeba介绍"></a>2.1、Amoeba介绍</h2><p>&#160; &#160; &#160; &#160;Ameba是一个以Mysql为底层数据存储，并对应用提供Mysql协议接口的proxy。它集中的响应应用的请求，依据用户事先设置的规则，将SQL请求发送到特定的数据库上执行。基于此可以实现负载均衡、读写分离、高可用性等需求。</p>
+<h2 id="2-2、Amoeba的配置"><a href="#2-2、Amoeba的配置" class="headerlink" title="2.2、Amoeba的配置"></a>2.2、Amoeba的配置</h2><blockquote>
+<p>Amoeba基于JDK开发，必须先安装JDK</p>
+</blockquote>
+<h3 id="2-2-1、编辑dbServer-xml"><a href="#2-2-1、编辑dbServer-xml" class="headerlink" title="2.2.1、编辑dbServer.xml"></a>2.2.1、编辑<code>dbServer.xml</code></h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mysql user 定义MySQL的用户名密码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">			</span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <hr>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置拦截器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 所有的请求都进入拦截器 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">"/**"</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 不拦截静态资源 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mvc:exclude-mapping</span> <span class="attr">path</span>=<span class="string">"/assets"</span>/&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 配置具体的拦截器 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.yzy.common.interceptor.HandlerInterceptor1"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"handlerInterceptor1"</span>/&gt;</span> #另一种配置</span><br><span class="line">	<span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong><em>总结</em></strong><br>preHandle按拦截器定义顺序调用<br>postHandler按拦截器定义逆序调用<br>afterCompletion按拦截器定义逆序调用</p>
-<p>postHandler在拦截器链内所有拦截器返成功调用<br>afterCompletion只有preHandle返回true才调用</p>
-<h2 id="图片上传的业务逻辑"><a href="#图片上传的业务逻辑" class="headerlink" title="图片上传的业务逻辑"></a>图片上传的业务逻辑</h2><ol>
-<li>确定url地址,确定提交的参数名称.</li>
-<li>可以通过文件的后缀判断是否为图片类型. png|jpg|gif</li>
-<li>通过第三方工具判断是否为恶意程序,获取图片的宽度和高度.</li>
-<li>为了提高检索效率,分文件储存. <ol>
-<li>按照商品类型 需要解决文件存储不均衡的现象.</li>
-<li>指定文件夹大小,例如保存满2000张图片后新创建文件夹. 不成熟</li>
-<li>按照时间进行储存. yyyy/MM/dd/HH 365个文件夹</li>
-</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--定义主库  --&gt;</span><br><span class="line">&lt;dbServer name=&quot;master&quot;  parent=&quot;abstractServer&quot;&gt;</span><br><span class="line">	&lt;factoryConfig&gt;</span><br><span class="line">		&lt;!-- mysql ip --&gt;</span><br><span class="line">		&lt;property name=&quot;ipAddress&quot;&gt;192.168.30.134&lt;/property&gt;</span><br><span class="line">		&lt;!-- 如果用户名和密码与父级配置不同，则重新配置 --&gt;</span><br><span class="line">	&lt;/factoryConfig&gt;</span><br><span class="line">&lt;/dbServer&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 定义数据库从库 --&gt;</span><br><span class="line">&lt;dbServer name=&quot;slave1&quot;  parent=&quot;abstractServer&quot;&gt;</span><br><span class="line">	&lt;factoryConfig&gt;</span><br><span class="line">		&lt;!-- mysql ip --&gt;</span><br><span class="line">		&lt;property name=&quot;ipAddress&quot;&gt;192.168.30.135&lt;/property&gt;</span><br><span class="line">	&lt;/factoryConfig&gt;</span><br><span class="line">&lt;/dbServer&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 配置读的池 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dbServer</span> <span class="attr">name</span>=<span class="string">"multiPool"</span> <span class="attr">virtual</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">poolConfig</span> <span class="attr">class</span>=<span class="string">"com.meidusa.amoeba.server.MultipleServerPool"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- Load balancing strategy: 1=ROUNDROBIN , 2=WEIGHTBASED , 3=HA 轮询、权重、hash--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"loadbalance"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">&lt;!-- Separated by commas,such as: server1,server2,server1 配置读池 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"poolNames"</span>&gt;</span>slave1,master,slave1<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">poolConfig</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dbServer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-2、编辑Amoeba-xml"><a href="#2-2-2、编辑Amoeba-xml" class="headerlink" title="2.2.2、编辑Amoeba.xml"></a>2.2.2、编辑<code>Amoeba.xml</code></h3><ol>
+<li><p>检查Amoeba端口号</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">name</span>=<span class="string">"Amoeba for Mysql"</span> <span class="attr">class</span>=<span class="string">"com.meidusa.amoeba.mysql.server.MySQLService"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- port --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"port"</span>&gt;</span>8066<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>防止文件重名现象.<ol>
-<li>利用时间戳生成名称+加随机数3位</li>
-<li>UUID:保证每次生成的串”都不相同”  1/存储数据  32位16进制数据</li>
-<li>md5(盐值+随机数)</li>
-</ol>
+<li><p>设定用户名和密码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"authenticateProvider"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.meidusa.amoeba.mysql.server.MysqlClientAuthenticator"</span>&gt;</span></span><br><span class="line">				</span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">				</span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>实现文件上传.  将图片信息保存到了本地磁盘中.</li>
-<li>生成网络请求的虚拟路径.方便其他人访问.</li>
+<li><p>添加默认项</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sqlFunctionFile"</span>&gt;</span>$&#123;amoeba.home&#125;/conf/functionMap.xml<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"LRUMapSize"</span>&gt;</span>1500<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--默认--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultPool"</span>&gt;</span>master<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">&lt;!-- 配置读写分离 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"writePool"</span>&gt;</span>master<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"readPool"</span>&gt;</span>multiPool<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"needParse"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-
+<h3 id="2-2-3、修改jvm-properties"><a href="#2-2-3、修改jvm-properties" class="headerlink" title="2.2.3、修改jvm.properties"></a>2.2.3、修改<code>jvm.properties</code></h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JVM相关的参数，包括内存配置、垃圾回收策略</span></span><br><span class="line"><span class="comment"># amoeba要求单个线程至少217k -Xss </span></span><br><span class="line">JVM_OPTIONS=<span class="string">"-server -Xms256m -Xmx1024m -Xss256k -XX:PermSize=16m -XX:MaxPermSize=96m"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用程序忽略的信号列表，以逗号分割，程序shutdown的信号为15（可用 kill -15 pid 可让程序文明的shutdown，请不要在这儿填15）</span></span><br><span class="line"></span><br><span class="line">IGNORE_SIGNALS=<span class="number">1</span>,<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3、测试Amoeba"><a href="#2-3、测试Amoeba" class="headerlink" title="2.3、测试Amoeba"></a>2.3、测试Amoeba</h2><ol>
+<li>启动Amoeba<br><code>./launcher</code></li>
+<li>停止Amoeba<br><code>./shutdown</code></li>
+</ol>
+<h3 id="2-3-1、负载均衡测试"><a href="#2-3-1、负载均衡测试" class="headerlink" title="2.3.1、负载均衡测试"></a>2.3.1、负载均衡测试</h3><p>只有读操作才能实现负载均衡，我们现在配置的是轮询，slave1,master,slave1<br>所以只要修改从库中的数据就能检查负载均衡是否成功</p>
+<h3 id="2-3-2、读写分离测试"><a href="#2-3-2、读写分离测试" class="headerlink" title="2.3.2、读写分离测试"></a>2.3.2、读写分离测试</h3><p>通过网页修改数据，检查从库中的数据是否同步</p>
+<h1 id="3、双机热备实现"><a href="#3、双机热备实现" class="headerlink" title="3、双机热备实现"></a>3、双机热备实现</h1>
       
     </div>
     
@@ -455,9 +487,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-            <a href="/tags/ssm/" rel="tag"># ssm</a>
+            <a href="/tags/高可用/" rel="tag"># 高可用</a>
           
         </div>
       
@@ -470,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/工具类和插件/" rel="next" title="工具类和插件">
-                <i class="fa fa-chevron-left"></i> 工具类和插件
+              <a href="/2019/04/10/nginx/" rel="next" title="Nginx">
+                <i class="fa fa-chevron-left"></i> Nginx
               </a>
             
           </div>
@@ -479,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/10/nginx/" rel="prev" title="Nginx">
-                Nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSM框架小记"><span class="nav-number">1.</span> <span class="nav-text">SSM框架小记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis核心配置文件的驼峰命名规则"><span class="nav-number">1.1.</span> <span class="nav-text">mybatis核心配置文件的驼峰命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置全局异常类"><span class="nav-number">1.2.</span> <span class="nav-text">配置全局异常类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#restful风格"><span class="nav-number">1.3.</span> <span class="nav-text">restful风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拦截器"><span class="nav-number">1.4.</span> <span class="nav-text">拦截器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片上传的业务逻辑"><span class="nav-number">1.5.</span> <span class="nav-text">图片上传的业务逻辑</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、数据库备份策略"><span class="nav-number">1.</span> <span class="nav-text">1、数据库备份策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1、数据库冷备份"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、数据库冷备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2、数据库热备份"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、数据库热备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3、数据库安装与配置"><span class="nav-number">1.3.</span> <span class="nav-text">1.3、数据库安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-远程连接数据库"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 远程连接数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4、实现数据库主从搭建"><span class="nav-number">1.4.</span> <span class="nav-text">1.4、实现数据库主从搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1、修改主库二进制文件"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.4.1、修改主库二进制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2、实现数据库主从挂载"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.4.2、实现数据库主从挂载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、Amoeba"><span class="nav-number">2.</span> <span class="nav-text">2、Amoeba</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1、Amoeba介绍"><span class="nav-number">2.1.</span> <span class="nav-text">2.1、Amoeba介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2、Amoeba的配置"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、Amoeba的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1、编辑dbServer-xml"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1、编辑dbServer.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2、编辑Amoeba-xml"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2、编辑Amoeba.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3、修改jvm-properties"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3、修改jvm.properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3、测试Amoeba"><span class="nav-number">2.3.</span> <span class="nav-text">2.3、测试Amoeba</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1、负载均衡测试"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1、负载均衡测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2、读写分离测试"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2、读写分离测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、双机热备实现"><span class="nav-number">3.</span> <span class="nav-text">3、双机热备实现</span></a></li></ol></div>
             
 
           </div>
